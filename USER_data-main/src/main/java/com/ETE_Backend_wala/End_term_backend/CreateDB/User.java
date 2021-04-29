@@ -1,4 +1,4 @@
-package com.ETE_Backend_wala.End_term_backend.model;
+package com.ETE_Backend_wala.End_term_backend.CreateDB;
 
 
 import javax.persistence.Column;

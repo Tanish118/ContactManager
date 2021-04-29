@@ -1,11 +1,11 @@
-package com.ETE_Backend_wala.End_term_backend.Controller;
+package com.ETE_Backend_wala.End_term_backend.UrlMapping;
 
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class BasicMaping {
+public class LayoutMapping {
     
     @RequestMapping("/")
     public String maino()

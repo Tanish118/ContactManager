@@ -1,8 +1,8 @@
-package com.ETE_Backend_wala.End_term_backend.Controller;
+package com.ETE_Backend_wala.End_term_backend.UrlMapping;
 
 
-import com.ETE_Backend_wala.End_term_backend.model.User;
-import com.ETE_Backend_wala.End_term_backend.service.UserService;
+import com.ETE_Backend_wala.End_term_backend.CreateDB.User;
+import com.ETE_Backend_wala.End_term_backend.Functions.Functions;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,17 +12,17 @@ import java.util.List;
 
 @CrossOrigin
 @RestController
-public class PersonalController {
+public class UserMapping {
 
     @Autowired
-    public UserService userService;
+    public Functions functions;
 
     @RequestMapping(value = "/add",method =RequestMethod.POST)
     public String adduser(@RequestBody String data) throws JsonProcessingException {
         System.out.println(data);
         User user = new ObjectMapper().readValue(data, User.class);
         System.out.println(user.toString());
-        if(userService.adduser(user))
+        if(functions.adduser(user))
         {
             System.out.println("yes");
             return "true";
@@ -33,7 +33,7 @@ public class PersonalController {
 
     @RequestMapping("/getallusers")
     public List<User> getusers()  {
-        List<User> userList=userService.getallusers();
+        List<User> userList= functions.getallusers();
         System.out.println(userList);
         return userList;
     }
@@ -42,7 +42,7 @@ public class PersonalController {
     public void deleteuser(@RequestBody String email)
     {
         System.out.println(email);
-        userService.deleteuser(email);
+        functions.deleteuser(email);
     }
 
     @RequestMapping(value = "/update",method = RequestMethod.PUT)
@@ -50,7 +50,7 @@ public class PersonalController {
         System.out.println(data);
         User user = new ObjectMapper().readValue(data, User.class);
         System.out.println(user.toString());
-        userService.adduser(user);
+        functions.adduser(user);
 
 
 
