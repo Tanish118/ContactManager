@@ -1,9 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
-
-
 body{
-   background-image: url("../images/000000000000001kanki.png");
+   background-image: url("../images/wall.jpg");
     width: 1500px;
     height: 700px;
     border: 2px solid darkgoldenrod;
@@ -29,8 +27,8 @@ body{
     color: #d0d7ea;
 }
 .btn:hover{
-    background-color: #ba0072;
-    color: #000c1d;
+    background-color: #00ba00;
+    color: #494c50;
 }
 #result{
     display: flex;
