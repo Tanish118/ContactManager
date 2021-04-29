@@ -1,19 +1,11 @@
 
 
 function fun()
-{
-
-
-
-
-
-    var xhttp = new XMLHttpRequest();
+{    var xhttp = new XMLHttpRequest();
     xhttp.open("GET", "https://contactbookupgrad.herokuapp/getallusers", true);
-    // xhttp.open("GET", "http://localhost:8080/getallusers", true);
+    
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-
-            // document.getElementById("result").innerHTML=this.responseText;
             var list=JSON.parse(this.responseText);
             for(var i=0;i<list.length;i++)
             {
@@ -23,11 +15,7 @@ function fun()
 
         }
     };
-
-
     xhttp.send();
-
-
 }
 
 function users(data)
@@ -92,13 +80,10 @@ function delet()
 {
     let td_d = event.target.parentNode;
      let c = td_d.children;
-    // for(let i=0;i<c.length-2;i++)
-    // {
-    //     alert(c[i].textContent);
-    // }
+   
     var xhttp1 = new XMLHttpRequest();
     xhttp1.open("DELETE", "https://userdetailsbybal.herokuapp.com/deleteuser", true);
-    // xhttp1.open("DELETE", "http://localhost:8080/deleteuser", true);
+  
     xhttp1.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
         alert("UserDeleted succesfully")
@@ -115,23 +100,10 @@ function edit()
 {
     let td_d = event.target.parentNode;
     let c = td_d.children;
-    // for(let i=0;i<c.length-2;i++)
-    // {
-    //     alert(c[i].);
-    //  }
+  
     var  modal=document.getElementById("myModal")
     modal.style.display = "block";
 
-
-    // var xhttp1 = new XMLHttpRequest();
-    // xhttp1.open("DELETE", "http://localhost:8080/deleteuser", true);
-    // xhttp1.onreadystatechange = function() {
-    //     if (this.readyState == 4 && this.status == 200) {
-    //         alert("UserDeleted succesfully")
-    //
-    //     }
-    // };
-    // xhttp1.send(c[2].textContent);
 
 }
 function clos()
@@ -150,8 +122,7 @@ function updatedata()
     let ph_no=document.getElementById("ph_no").value;
 
     var xhttp = new XMLHttpRequest();
-    xhttp.open("PUT", "https://userdetailsbybal.herokuapp.com/update", true);
-    // xhttp.open("PUT", "http://localhost:8080/update", true);
+    xhttp.open("PUT", "https://userdetailsbybal.herokuapp.com/update", true);    
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             alert(this.responseText)
